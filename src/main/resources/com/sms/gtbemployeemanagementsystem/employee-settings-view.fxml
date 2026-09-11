@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<VBox spacing="20.0" style="-fx-background-color: #D6E2F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sms.gtbemployeemanagementsystem.controller.EmployeeSettingsController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+
+    <VBox spacing="2.0">
+        <Label text="Settings" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+        <Label text="Manage your account settings" style="-fx-font-size: 13px; -fx-text-fill: #4c1d95;"/>
+    </VBox>
+
+    <VBox spacing="15.0" maxWidth="420.0" style="-fx-background-color: white; -fx-padding: 25px; -fx-background-radius: 12px;">
+        <Label text="Change Password" style="-fx-font-weight: bold; -fx-font-size: 15px; -fx-text-fill: #14213D;"/>
+
+        <VBox spacing="4.0">
+            <Label text="Current Password" style="-fx-text-fill: #1D3A8A; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+            <StackPane>
+                <PasswordField fx:id="currentPasswordField" style="-fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #D6DCE8; -fx-pref-height: 36px;"/>
+                <TextField fx:id="currentPasswordVisible" visible="false" managed="false"
+                           style="-fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #D6DCE8; -fx-pref-height: 36px;"/>
+                <ToggleButton fx:id="currentPasswordToggle" StackPane.alignment="CENTER_RIGHT" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="👁" style="-fx-font-size: 13px; -fx-text-fill: #1D3A8A;"/>
+                    </graphic>
+                    <StackPane.margin>
+                        <Insets right="6.0"/>
+                    </StackPane.margin>
+                </ToggleButton>
+            </StackPane>
+        </VBox>
+
+        <VBox spacing="4.0">
+            <Label text="New Password" style="-fx-text-fill: #1D3A8A; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+            <StackPane>
+                <PasswordField fx:id="newPasswordField" style="-fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #D6DCE8; -fx-pref-height: 36px;"/>
+                <TextField fx:id="newPasswordVisible" visible="false" managed="false"
+                           style="-fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #D6DCE8; -fx-pref-height: 36px;"/>
+                <ToggleButton fx:id="newPasswordToggle" StackPane.alignment="CENTER_RIGHT" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="👁" style="-fx-font-size: 13px; -fx-text-fill: #1D3A8A;"/>
+                    </graphic>
+                    <StackPane.margin>
+                        <Insets right="6.0"/>
+                    </StackPane.margin>
+                </ToggleButton>
+            </StackPane>
+        </VBox>
+
+        <VBox spacing="4.0">
+            <Label text="Confirm New Password" style="-fx-text-fill: #1D3A8A; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+            <StackPane>
+                <PasswordField fx:id="confirmPasswordField" style="-fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #D6DCE8; -fx-pref-height: 36px;"/>
+                <TextField fx:id="confirmPasswordVisible" visible="false" managed="false"
+                           style="-fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #D6DCE8; -fx-pref-height: 36px;"/>
+                <ToggleButton fx:id="confirmPasswordToggle" StackPane.alignment="CENTER_RIGHT" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                    <graphic>
+                        <Label text="👁" style="-fx-font-size: 13px; -fx-text-fill: #1D3A8A;"/>
+                    </graphic>
+                    <StackPane.margin>
+                        <Insets right="6.0"/>
+                    </StackPane.margin>
+                </ToggleButton>
+            </StackPane>
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT">
+            <Button fx:id="saveButton" text="Update Password" onAction="#handleChangePassword"
+                    style="-fx-background-color: #14213D; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6px; -fx-padding: 10px 20px; -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+</VBox>

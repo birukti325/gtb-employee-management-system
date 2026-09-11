@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20.0" style="-fx-background-color: #D6E2F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sms.gtbemployeemanagementsystem.controller.DirectoryController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="20.0">
+        <VBox spacing="5.0">
+            <Label text="Staff Directory" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+            <Label text="View and manage corporate team members" style="-fx-font-size: 13px; -fx-text-fill: #1D3A8A;"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="searchField" promptText="Search by name or role..." style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #D6DCE8; -fx-background-color: white; -fx-pref-width: 200px; -fx-pref-height: 35px;"/>
+        <ComboBox fx:id="departmentFilter" promptText="Department" style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #D6DCE8; -fx-background-color: white; -fx-pref-height: 35px;"/>
+        <Button fx:id="clearFilterBtn" text="✕" onAction="#clearFilters" style="-fx-background-color: #E8ECF5; -fx-text-fill: #14213D; -fx-background-radius: 8px; -fx-pref-height: 35px; -fx-pref-width: 35px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <TableView fx:id="directoryTable" VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #D6DCE8;">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="60.0" text="ID" />
+            <TableColumn fx:id="photoColumn" prefWidth="60.0" text="Photo" style="-fx-alignment: CENTER;" />
+            <TableColumn fx:id="nameColumn" prefWidth="180.0" text="Name" />
+            <TableColumn fx:id="departmentColumn" prefWidth="150.0" text="Department" />
+            <TableColumn fx:id="roleColumn" prefWidth="140.0" text="Role" />
+            <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" style="-fx-alignment: CENTER;" />
+            <TableColumn fx:id="actionsColumn" prefWidth="90.0" text="Actions" style="-fx-alignment: CENTER;" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+</VBox>

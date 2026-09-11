@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="25.0" style="-fx-background-color: #D6E2F4;" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sms.gtbemployeemanagementsystem.controller.Leave_requestController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+
+    <VBox spacing="5.0">
+        <Label text="Leave Requests" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+        <Label text="Manage and process employee absence records" style="-fx-font-size: 13px; -fx-text-fill: #1D3A8A;"/>
+    </VBox>
+
+    <VBox spacing="15.0" VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 20px; -fx-background-radius: 12px; -fx-border-color: #D6DCE8; -fx-border-radius: 12px;">
+        <TableView fx:id="leaveTable" VBox.vgrow="ALWAYS" style="-fx-background-radius: 6px;">
+            <columns>
+                <TableColumn fx:id="idColumn" text="Request ID" prefWidth="90.0"/>
+                <TableColumn fx:id="employeeColumn" text="Employee Name" prefWidth="220.0"/>
+                <TableColumn fx:id="typeColumn" text="Leave Type" prefWidth="150.0"/>
+                <TableColumn fx:id="durationColumn" text="Duration (Days)" prefWidth="130.0"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="130.0" style="-fx-alignment: CENTER;"/>
+                <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="90.0" style="-fx-alignment: CENTER;"/>
+                <TableColumn fx:id="startDateColumn" text="Start Date" prefWidth="120.0"/>
+                <TableColumn fx:id="endDateColumn" text="End Date" prefWidth="120.0"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </VBox>
+</VBox>

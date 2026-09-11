@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sms.gtbemployeemanagementsystem.controller.LoginController"
+           prefWidth="900.0" prefHeight="650.0" style="-fx-background-color: #D6E2F4;">
+
+    <VBox alignment="CENTER" spacing="0" maxWidth="420.0" maxHeight="560.0"
+          style="-fx-background-color: white; -fx-background-radius: 20px; -fx-border-color: #D6DCE8; -fx-border-radius: 20px; -fx-effect: dropshadow(gaussian, rgba(20,33,61,0.15), 20, 0, 0, 6);">
+        <padding>
+            <Insets top="45.0" right="45.0" bottom="45.0" left="45.0"/>
+        </padding>
+
+        <ImageView fitWidth="72.0" fitHeight="72.0" preserveRatio="true">
+            <image>
+                <Image url="@gtb-logo-transparent.png"/>
+            </image>
+            <VBox.margin>
+                <Insets bottom="20.0"/>
+            </VBox.margin>
+        </ImageView>
+
+        <Label text="Welcome Back" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #14213D;">
+            <VBox.margin>
+                <Insets bottom="4.0"/>
+            </VBox.margin>
+        </Label>
+        <Label text="Sign in to GTB Employee Management System" style="-fx-font-size: 13px; -fx-text-fill: #1D3A8A;">
+            <VBox.margin>
+                <Insets bottom="30.0"/>
+            </VBox.margin>
+        </Label>
+
+        <VBox spacing="16.0" maxWidth="330.0">
+            <VBox spacing="6.0">
+                <Label text="Username" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+                <TextField fx:id="usernameField" promptText="Enter your username" onAction="#onLoginClicked"
+                           style="-fx-background-color: #F8FAFC; -fx-border-color: #D6DCE8; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-padding: 12px; -fx-font-size: 13px;"/>
+            </VBox>
+
+            <VBox spacing="6.0">
+                <Label text="Password" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+                <StackPane maxWidth="330.0">
+                    <PasswordField fx:id="passwordField" promptText="Enter your password" onAction="#onLoginClicked"
+                                   style="-fx-background-color: #F8FAFC; -fx-border-color: #D6DCE8; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-padding: 12px; -fx-font-size: 13px;"/>
+                    <TextField fx:id="visiblePasswordField" promptText="Enter your password" onAction="#onLoginClicked" visible="false" managed="false"
+                               style="-fx-background-color: #F8FAFC; -fx-border-color: #D6DCE8; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-padding: 12px; -fx-font-size: 13px;"/>
+                    <ToggleButton fx:id="showPasswordToggle" StackPane.alignment="CENTER_RIGHT" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <Label text="👁" style="-fx-font-size: 14px; -fx-text-fill: #1D3A8A;"/>
+                        </graphic>
+                        <StackPane.margin>
+                            <Insets right="6.0"/>
+                        </StackPane.margin>
+                    </ToggleButton>
+                </StackPane>
+            </VBox>
+
+            <Button text="Log In" onAction="#onLoginClicked" prefWidth="330.0" prefHeight="44.0" defaultButton="true"
+                    style="-fx-background-color: #14213D; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 10px; -fx-cursor: hand;">
+                <VBox.margin>
+                    <Insets top="10.0"/>
+                </VBox.margin>
+            </Button>
+
+            <HBox alignment="CENTER">
+                <Hyperlink fx:id="forgotPasswordLink" text="Forgot Password?" onAction="#handleForgotPassword"
+                           style="-fx-text-fill: #7c3aed; -fx-font-size: 12px;"/>
+                <HBox.margin>
+                    <Insets top="4.0"/>
+                </HBox.margin>
+            </HBox>
+        </VBox>
+    </VBox>
+
+</StackPane>

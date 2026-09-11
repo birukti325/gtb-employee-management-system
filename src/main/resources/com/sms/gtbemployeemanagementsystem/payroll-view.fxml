@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      spacing="20.0" style="-fx-background-color: #D6E2F4;" VBox.vgrow="ALWAYS"
+      fx:controller="com.sms.gtbemployeemanagementsystem.controller.PayrollController">
+    <padding>
+        <Insets top="25" bottom="25" left="25" right="25"/>
+    </padding>
+
+    <VBox spacing="2.0">
+        <Label text="Payroll Management" style="-fx-text-fill: #14213D; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <Label text="Process salary slips, deductions, and financial balancing ledgers" style="-fx-text-fill: #1D3A8A; -fx-font-size: 12px;"/>
+    </VBox>
+
+    <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+        <VBox spacing="15.0" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-border-color: #D6DCE8; -fx-border-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(20,33,61,0.10), 8, 0, 0, 2);">
+            <Label text="Employee Salary Directory" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                <ComboBox fx:id="monthSelector" promptText="Select Month" editable="true"
+                          style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #D6DCE8; -fx-padding: 2;"
+                          prefWidth="200.0"/>
+                <TextField fx:id="searchField" promptText="Search by employee name..."
+                           style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #D6DCE8; -fx-padding: 8;"
+                           maxWidth="300.0" HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <TableView fx:id="payrollTable" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50.0"/>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="150.0"/>
+                    <TableColumn fx:id="baseSalaryColumn" text="Base Salary" prefWidth="100.0">
+                        <cellValueFactory><PropertyValueFactory property="baseSalary"/></cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="allowancesColumn" text="Allowances" prefWidth="95.0">
+                        <cellValueFactory><PropertyValueFactory property="allowances"/></cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="transportAllowanceColumn" text="Transport" prefWidth="90.0">
+                        <cellValueFactory><PropertyValueFactory property="transportAllowance"/></cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="taxColumn" text="Tax" prefWidth="85.0">
+                        <cellValueFactory><PropertyValueFactory property="tax"/></cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="deductionsColumn" text="Deductions" prefWidth="95.0">
+                        <cellValueFactory><PropertyValueFactory property="deductions"/></cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="pensionColumn" text="Pension Emp (7%)" prefWidth="110.0">
+                        <cellValueFactory><PropertyValueFactory property="pension"/></cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="employerPensionColumn" text="Pension Empr (11%)" prefWidth="115.0">
+                        <cellValueFactory><PropertyValueFactory property="employerPension"/></cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="netPayoutColumn" text="Net Payout" prefWidth="100.0">
+                        <cellValueFactory><PropertyValueFactory property="netPayout"/></cellValueFactory>
+                    </TableColumn>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+        </VBox>
+
+        <VBox spacing="20.0" prefWidth="300.0" minWidth="300.0">
+            <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-border-color: #D6DCE8; -fx-border-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(20,33,61,0.10), 8, 0, 0, 2);">
+                <Label text="Tax &amp; Salary Summary" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+                <VBox spacing="12.0" style="-fx-padding: 10 0;">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="Gross Payroll Expense:" style="-fx-text-fill: #1D3A8A;"/>
+                        <VBox HBox.hgrow="ALWAYS" alignment="CENTER_RIGHT">
+                            <Label fx:id="grossPayrollLabel" text="ETB 0.00" style="-fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+                        </VBox>
+                    </HBox>
+                    <HBox style="-fx-border-color: #D6DCE8; -fx-border-width: 1 0 0 0; -fx-padding: 10 0 0 0;" alignment="CENTER_LEFT">
+                        <Label text="Total Net Distribution:" style="-fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+                        <VBox HBox.hgrow="ALWAYS" alignment="CENTER_RIGHT">
+                            <Label fx:id="totalNetDistributionLabel" text="ETB 0.00" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1D3A8A;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </VBox>
+    </HBox>
+</VBox>

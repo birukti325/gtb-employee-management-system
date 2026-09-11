@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20.0" style="-fx-background-color: #D6E2F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sms.gtbemployeemanagementsystem.controller.AdminSettingsController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+
+    <VBox spacing="2.0">
+        <Label text="System Settings" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+        <Label text="Manage shared login passwords" style="-fx-font-size: 12px; -fx-text-fill: #1D3A8A;"/>
+    </VBox>
+
+    <HBox spacing="20.0">
+
+        <!-- Admin Password Card -->
+        <VBox spacing="15.0" prefWidth="400.0" style="-fx-background-color: white; -fx-padding: 25px; -fx-background-radius: 12px; -fx-border-color: #D6DCE8; -fx-border-radius: 12px;">
+            <Label text="Admin Password" style="-fx-font-weight: bold; -fx-font-size: 15px; -fx-text-fill: #14213D;"/>
+            <Label text="Applies to all admin accounts" style="-fx-font-size: 11px; -fx-text-fill: #1D3A8A;"/>
+
+            <!-- Current Admin Password -->
+            <VBox spacing="6.0">
+                <Label text="Current Password" style="-fx-text-fill: #1D3A8A; -fx-font-size: 12px;"/>
+                <HBox spacing="0.0" alignment="CENTER_LEFT" style="-fx-border-color: #D6DCE8; -fx-border-radius: 6px; -fx-background-radius: 6px;">
+                    <PasswordField fx:id="adminCurrentPasswordInput" HBox.hgrow="ALWAYS" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 8px;"/>
+                    <TextField fx:id="adminCurrentPasswordVisible" HBox.hgrow="ALWAYS" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 8px;"/>
+                    <ToggleButton fx:id="adminCurrentPasswordToggle" text="👁" style="-fx-background-color: transparent; -fx-padding: 4px 10px; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+
+            <!-- New Admin Password -->
+            <VBox spacing="6.0">
+                <Label text="New Password" style="-fx-text-fill: #1D3A8A; -fx-font-size: 12px;"/>
+                <HBox spacing="0.0" alignment="CENTER_LEFT" style="-fx-border-color: #D6DCE8; -fx-border-radius: 6px; -fx-background-radius: 6px;">
+                    <PasswordField fx:id="adminNewPasswordInput" HBox.hgrow="ALWAYS" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 8px;"/>
+                    <TextField fx:id="adminNewPasswordVisible" HBox.hgrow="ALWAYS" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 8px;"/>
+                    <ToggleButton fx:id="adminNewPasswordToggle" text="👁" style="-fx-background-color: transparent; -fx-padding: 4px 10px; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+
+            <Button text="Done" onAction="#handleAdminPasswordReset"
+                    style="-fx-background-color: #14213D; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6px; -fx-padding: 10px 24px;"/>
+        </VBox>
+
+    </HBox>
+</VBox>

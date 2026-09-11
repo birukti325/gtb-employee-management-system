@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="15.0" style="-fx-background-color: #D6E2F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sms.gtbemployeemanagementsystem.controller.DepartmentRolesController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+
+    <VBox spacing="5.0">
+        <Label fx:id="deptNameLabel" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #14213D;" text="Department Name" />
+        <Label style="-fx-font-size: 13px; -fx-text-fill: #1D3A8A;" text="Roles &amp; Assigned Employees" />
+    </VBox>
+
+    <VBox spacing="0.0" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-border-color: #D6DCE8; -fx-border-radius: 8px;" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
+        <TableView fx:id="rolesTable" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colRole" prefWidth="180.0" text="Role" />
+                <TableColumn fx:id="colEmployees" prefWidth="280.0" text="Employees" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </VBox>
+</VBox>

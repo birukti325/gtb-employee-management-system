@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20.0" style="-fx-background-color: #D6E2F4;" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sms.gtbemployeemanagementsystem.controller.PayrollHistoryController">
+    <padding>
+        <Insets top="25" bottom="25" left="25" right="25"/>
+    </padding>
+
+    <VBox spacing="2.0">
+        <Label text="Payroll History" style="-fx-text-fill: #14213D; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <Label text="Browse previously submitted payroll reports by month or year." style="-fx-text-fill: #1D3A8A; -fx-font-size: 12px;"/>
+    </VBox>
+
+    <VBox spacing="15.0" VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-border-color: #D6DCE8; -fx-border-radius: 10;">
+
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label text="Year:" style="-fx-text-fill: #14213D; -fx-font-weight: bold;"/>
+            <TextField fx:id="yearSearchField" promptText="e.g. 2026" maxWidth="100.0"/>
+            <Button text="Search" onAction="#handleYearSearch"
+                    style="-fx-background-color: #14213D; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-cursor: hand;"/>
+            <Button text="Show All" onAction="#handleShowAll"
+                    style="-fx-background-color: #E8ECF5; -fx-text-fill: #14213D; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-cursor: hand;"/>
+        </HBox>
+
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent; -fx-background: transparent;">
+            <VBox fx:id="periodListBox" spacing="10.0"/>
+        </ScrollPane>
+    </VBox>
+</VBox>

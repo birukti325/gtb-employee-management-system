@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20.0" style="-fx-background-color: #D6E2F4;" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sms.gtbemployeemanagementsystem.controller.EmployeeDocumentsController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+
+    <VBox spacing="5.0">
+        <Label text="My Documents" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+        <Label text="View and manage your uploaded documents" style="-fx-font-size: 13px; -fx-text-fill: #1D3A8A;"/>
+    </VBox>
+
+    <VBox spacing="14.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #D6DCE8;">
+        <padding>
+            <Insets top="20.0" bottom="20.0" left="20.0" right="20.0"/>
+        </padding>
+
+        <!-- Row 1: Guarantor -->
+        <HBox spacing="15.0" alignment="CENTER_LEFT">
+            <VBox spacing="5.0">
+                <Label text="Guarantor Name" style="-fx-font-size: 12px; -fx-text-fill: #1D3A8A; -fx-font-weight: bold;"/>
+                <TextField fx:id="guarantorField" promptText="Enter guarantor name"
+                           style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #D6DCE8; -fx-pref-width: 220px; -fx-pref-height: 32px;"/>
+            </VBox>
+            <VBox spacing="5.0">
+                <Label text="Guarantor Phone" style="-fx-font-size: 12px; -fx-text-fill: #1D3A8A; -fx-font-weight: bold;"/>
+                <TextField fx:id="guarantorPhoneField" promptText="Enter phone number"
+                           style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #D6DCE8; -fx-pref-width: 220px; -fx-pref-height: 32px;"/>
+            </VBox>
+        </HBox>
+
+        <!-- Row 2: Employment Agreement Contract / Birth Date -->
+        <HBox spacing="15.0" alignment="CENTER_LEFT">
+            <VBox spacing="5.0">
+                <Label text="Employment Agreement Contract" style="-fx-font-size: 12px; -fx-text-fill: #1D3A8A; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="employmentAgreementField" editable="true" promptText="Attached / Not Attached"
+                          style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #D6DCE8; -fx-pref-width: 220px; -fx-pref-height: 32px;"/>
+            </VBox>
+            <VBox spacing="5.0">
+                <Label text="Birth Date" style="-fx-font-size: 12px; -fx-text-fill: #1D3A8A; -fx-font-weight: bold;"/>
+                <TextField fx:id="birthDateField" promptText="e.g. 1990-05-14"
+                           style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #D6DCE8; -fx-pref-width: 220px; -fx-pref-height: 32px;"/>
+            </VBox>
+        </HBox>
+
+        <!-- Row 3: Employment Conditions / Employment Date -->
+        <HBox spacing="15.0" alignment="CENTER_LEFT">
+            <VBox spacing="5.0">
+                <Label text="Employment Conditions" style="-fx-font-size: 12px; -fx-text-fill: #1D3A8A; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="employmentConditionsField" editable="true" promptText="Permanent / Contract"
+                          style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #D6DCE8; -fx-pref-width: 220px; -fx-pref-height: 32px;"/>
+            </VBox>
+            <VBox spacing="5.0">
+                <Label text="Employment Date" style="-fx-font-size: 12px; -fx-text-fill: #1D3A8A; -fx-font-weight: bold;"/>
+                <TextField fx:id="employmentDateField" promptText="e.g. 2022-01-10"
+                           style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #D6DCE8; -fx-pref-width: 220px; -fx-pref-height: 32px;"/>
+            </VBox>
+        </HBox>
+
+        <HBox alignment="CENTER_RIGHT">
+            <Button fx:id="saveDetailsBtn" text="Save Details" onAction="#handleSaveDetails"
+                    style="-fx-background-color: #14213D; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8px; -fx-pref-height: 32px; -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="12.0" VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #D6DCE8;">
+        <padding>
+            <Insets top="20.0" bottom="20.0" left="20.0" right="20.0"/>
+        </padding>
+        <Label text="Uploaded Documents" style="-fx-font-size: 12px; -fx-text-fill: #1D3A8A; -fx-font-weight: bold;"/>
+
+        <VBox fx:id="docsListBox" spacing="8.0"/>
+
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <HBox spacing="8.0" alignment="CENTER_LEFT">
+            <ComboBox fx:id="typeBox" promptText="Document type"
+                      style="-fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: #D6DCE8; -fx-pref-height: 32px;"/>
+            <Button fx:id="uploadBtn" text="+ Upload Document" onAction="#handleUpload"
+                    style="-fx-background-color: #14213D; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8px; -fx-padding: 8px 14px; -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+</VBox>

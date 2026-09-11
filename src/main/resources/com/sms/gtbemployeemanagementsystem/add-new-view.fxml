@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="25.0" style="-fx-background-color: #D6E2F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sms.gtbemployeemanagementsystem.controller.AddNewController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <VBox spacing="5.0">
+        <Label text="Onboard New Staff" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+    </VBox>
+
+    <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+        <VBox spacing="20.0" maxWidth="600.0" style="-fx-background-color: white; -fx-padding: 30px; -fx-background-radius: 12px; -fx-border-color: #D6DCE8;">
+
+
+            <VBox spacing="8.0">
+                <Label text="Name" style="-fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+                <TextField fx:id="fullNameInput" promptText="Full Name"/>
+            </VBox>
+
+            <VBox spacing="8.0">
+                <Label text="Department" style="-fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+                <ComboBox fx:id="departmentInput" prefWidth="600.0"/>
+            </VBox>
+
+            <VBox spacing="8.0">
+                <Label text="Role" style="-fx-font-weight: bold; -fx-text-fill: #14213D;"/>
+                <ComboBox fx:id="roleInput" editable="true" prefWidth="600.0" promptText="Select or type a role"/>
+            </VBox>
+
+            <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                <Button onAction="#handleClearForm" text="Cancel" style="-fx-background-color: #E8ECF5; -fx-text-fill: #14213D;"/>
+                <Button onAction="#handleSaveEmployee" text="Save" style="-fx-background-color: #14213D; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>

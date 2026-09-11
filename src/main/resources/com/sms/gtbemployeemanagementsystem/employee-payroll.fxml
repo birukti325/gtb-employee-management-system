@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      spacing="20.0" style="-fx-background-color: #D6E2F4;" VBox.vgrow="ALWAYS"
+      fx:controller="com.sms.gtbemployeemanagementsystem.controller.EmployeePayrollController">
+    <padding>
+        <Insets top="25" bottom="25" left="25" right="25"/>
+    </padding>
+
+    <VBox spacing="2.0">
+        <Label text="Payroll Management" style="-fx-text-fill: #14213D; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <Label text="Use the 3-dot action menu to edit allowances and deductions or remove entries." style="-fx-text-fill: #1D3A8A; -fx-font-size: 12px;"/>
+        <Label fx:id="currentPeriodLabel" text=""
+               style="-fx-text-fill: #14213D; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand; -fx-underline: true;"/>
+    </VBox>
+
+    <VBox spacing="15.0" VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-border-color: #D6DCE8; -fx-border-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(20,33,61,0.10), 8, 0, 0, 2);">
+
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label text="Employee Salary Directory" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #14213D;" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="searchField" promptText="Search employee..." style="-fx-background-radius: 6; -fx-border-color: #D6DCE8; -fx-padding: 8;" maxWidth="250.0"/>
+            <Button fx:id="manageColumnsBtn" text="Manage Columns" onAction="#handleManageColumns"
+                    style="-fx-background-color: #E8ECF5; -fx-text-fill: #14213D; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-cursor: hand;"/>
+            <Button fx:id="generatePayrollListBtn" text="+ Generate New Payroll List" onAction="#handleGenerateNewPayrollList"
+                    style="-fx-background-color: #10B981; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-cursor: hand;"/>
+        </HBox>
+
+        <TableView fx:id="payrollTable" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="40.0"/>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="150.0"/>
+                <TableColumn fx:id="baseSalaryColumn" text="Base Salary" prefWidth="95.0"/>
+                <TableColumn fx:id="allowancesColumn" text="Allowances" prefWidth="95.0"/>
+                <TableColumn fx:id="transportAllowanceColumn" text="Transport" prefWidth="90.0"/>
+                <TableColumn fx:id="taxColumn" text="Tax" prefWidth="85.0"/>
+                <TableColumn fx:id="deductionsColumn" text="Deductions" prefWidth="90.0"/>
+                <TableColumn fx:id="pensionColumn" text="Pension (7%)" prefWidth="100.0"/>
+                <TableColumn fx:id="netPayoutColumn" text="Net Payout" prefWidth="100.0"/>
+                <TableColumn fx:id="actionColumn" text="Action" prefWidth="60.0"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+
+        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                <Button fx:id="exportPayrollBtn" text="⬇ Export Payroll" onAction="#handleExportPayroll"
+                        style="-fx-background-color: #E8ECF5; -fx-text-fill: #14213D; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-color: #D6DCE8; -fx-border-radius: 8; -fx-cursor: hand;"/>
+                <Button fx:id="sendReportBtn" text="Send Monthly Report to Admin" onAction="#handleSendReport"
+                        style="-fx-background-color: #14213D; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 8; -fx-cursor: hand;"/>
+            </HBox>
+        </HBox>
+    </VBox>
+</VBox>
