@@ -129,17 +129,7 @@ JavaFX View (FXML)  ->  Controller (@Component)  ->  Service  ->  Repository (Sp
    ./mvnw spring-boot:run
    ```
    Alternatively, run `Launcher.java` directly from your IDE.
-
-## Configuration
-
-All environment-specific values are externalized via a `.env` file at the project root, loaded automatically through [`spring-dotenv`](https://github.com/paulschwarz/spring-dotenv). This keeps credentials out of version control — `.env` is excluded via `.gitignore`.
-
-| Variable | Description |
-|---|---|
-| `DB_USERNAME` | PostgreSQL username |
-| `DB_PASSWORD` | PostgreSQL password |
-
-See `.env.example` for a template.
+   
 
 ## Project Structure
 
